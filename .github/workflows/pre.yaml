@@ -1,0 +1,17 @@
+name: Pre
+
+on:
+  release:
+    types:
+      - prereleased
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    environment: test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Deploy
+        run: |
+          echo "Deploying to test environment..."
